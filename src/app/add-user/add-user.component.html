@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<app-navbar></app-navbar>
+
+<div class="container">
+
+    <br>
+
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Add User</h4>
+
+            <form action="#!" [formGroup]="_registerForm" (ngSubmit)="registerUser()">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control" id="name" formControlName="name" placeholder="Name" type="text"
+                        required>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <input class="form-control" id="job" placeholder="Job" formControlName="job" type="text" required>
+                </div>
+
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Email address" type="email">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Create password" type="password">
+                </div> <!-- form-group// -->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Create</button>
+                </div> <!-- form-group// -->
+                <br>
+
+            </form>
+
+        </article>
+    </div> <!-- card.// -->
+
+    <div class="jumbotron "  [hidden]="active" >
+            <h4 class="card-title mt-3  text-center ">User created</h4>
+            <hr class="my-4">
+            <p>Id: {{_userRegister.id}} </p>
+            <p>Name: {{_userRegister.name}} </p>
+            <p>Job: {{_userRegister.job}} </p>            
+            <p>CreatedAt: {{_userRegister.createdAt}} </p>
+       
+</div>
+</div>
